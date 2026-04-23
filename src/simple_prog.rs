@@ -17,6 +17,8 @@ fn check_age(age: i32) -> Status {
     }
 }
 
+//Don't include : [Person; 2] in the onlineGDB version, it will cause an error.
+//Also don't include : Person in the for loop, just use person instead. It will cause an error otherwise.
 pub fn demo() {
     let people = [
         Person { name: String::from("Ana"), age: 12 },
