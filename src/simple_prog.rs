@@ -17,7 +17,7 @@ fn check_age(age: i32) -> Status {
     }
 }
 
-fn main() {
+pub fn demo() {
     let people = [
         Person { name: String::from("Ana"), age: 12 },
         Person { name: String::from("Bob"), age: 20 },

@@ -1,3 +1,6 @@
+
+mod simple_prog;
+
 fn main() {
     // Three ways to print things using macros
     println!("Hello, world!");
@@ -240,6 +243,9 @@ fn main() {
 
     let sum = add(3, 4);
     println!("Sum is: {}", sum);
+
+    //Calling demo function from simple_prog.rs
+    simple_prog::demo();
 
 
 }
