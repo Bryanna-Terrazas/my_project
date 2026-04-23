@@ -6,7 +6,6 @@ struct Person {
 enum Status {
     Child,
     Adult,
-
 }
 
 fn check_age(age: i32) -> Status {
@@ -17,8 +16,13 @@ fn check_age(age: i32) -> Status {
     }
 }
 
-//Don't include : [Person; 2] in the onlineGDB version, it will cause an error.
-//Also don't include : Person in the for loop, just use person instead. It will cause an error otherwise.
+// Ownership moves into this function
+fn show_name(name: String) {
+    println!("Name: {}", name);
+}
+
+
+//demo function to show ownership and pattern matching
 pub fn demo() {
     let people = [
         Person { name: String::from("Ana"), age: 12 },
@@ -26,9 +30,11 @@ pub fn demo() {
     ];
 
     for person in people {
+        show_name(person.name);   // ownership of name moves here
+
         match check_age(person.age) {
-            Status::Child => println!("{} is a child", person.name),
-            Status::Adult => println!("{} is an adult", person.name),
+            Status::Child => println!("Age: Child"),
+            Status::Adult => println!("Age: Adult"),
         }
     }
 }
