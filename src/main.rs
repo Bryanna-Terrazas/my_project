@@ -169,7 +169,7 @@ fn main() {
     }
     // There can also be several matches using OR
     // The results of match can also be saved into a variable
-    let result = match day {
+    let result: &str = match day {
         1 | 2 | 3 | 4 | 5 => "Weekday",
         6 | 7 => "Weekend",
         _ => "Invalid day",
